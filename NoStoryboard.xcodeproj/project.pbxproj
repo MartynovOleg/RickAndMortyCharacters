@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0463517D2852097000A18724 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0463517C2852097000A18724 /* DataModel.swift */; };
 		0494901D2833D29C006C5037 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0494901C2833D29C006C5037 /* AppDelegate.swift */; };
 		0494901F2833D29C006C5037 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0494901E2833D29C006C5037 /* SceneDelegate.swift */; };
 		049490212833D29C006C5037 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049490202833D29C006C5037 /* ViewController.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0463517C2852097000A18724 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		049490192833D29C006C5037 /* NoStoryboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoStoryboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0494901C2833D29C006C5037 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0494901E2833D29C006C5037 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				0494901C2833D29C006C5037 /* AppDelegate.swift */,
 				0494901E2833D29C006C5037 /* SceneDelegate.swift */,
 				049490202833D29C006C5037 /* ViewController.swift */,
+				0463517C2852097000A18724 /* DataModel.swift */,
 				049490252833D29E006C5037 /* Assets.xcassets */,
 				049490272833D29E006C5037 /* LaunchScreen.storyboard */,
 				0494902A2833D29E006C5037 /* Info.plist */,
@@ -108,6 +111,9 @@
 				Base,
 			);
 			mainGroup = 049490102833D29C006C5037;
+			packageReferences = (
+				0463517B2852079200A18724 /* XCRemoteSwiftPackageReference "rick-and-morty-api" */,
+			);
 			productRefGroup = 0494901A2833D29C006C5037 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -135,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				049490212833D29C006C5037 /* ViewController.swift in Sources */,
+				0463517D2852097000A18724 /* DataModel.swift in Sources */,
 				0494901D2833D29C006C5037 /* AppDelegate.swift in Sources */,
 				0494901F2833D29C006C5037 /* SceneDelegate.swift in Sources */,
 			);
@@ -346,6 +353,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0463517B2852079200A18724 /* XCRemoteSwiftPackageReference "rick-and-morty-api" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/afuh/rick-and-morty-api.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 049490112833D29C006C5037 /* Project object */;
 }

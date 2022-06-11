@@ -7,41 +7,48 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
 
-    var tableView: UITableView {
-        let table = UITableView()
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        table.reloadData()
-        return table
-    }
-    
+    let table = UITableView()
+    let identifier = "MyCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Таблица"
+        parseJson()
+        table.rowHeight = 100
+        table.frame = view.frame
+        table.register(UITableViewCell.self, forCellReuseIdentifier: identifier)
+        table.reloadData()
+        table.dataSource = self
+        table.delegate = self
         view.backgroundColor = .systemBlue
-        tableView.dataSource = self
-        tableView.delegate = self
-        view.addSubview(tableView)
+        view.addSubview(table)
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tableView.frame = view.bounds
+    private func parseJson() {
+        let exampleUrl = URL(string: "https://rickandmortyapi.com/api/character")!
+        do {
+            let jsonData = try Data(contentsOf: exampleUrl)
+            let result = try JSONDecoder().decode(Object.self, from: jsonData)
+            print(result)
+        } catch {   
+           print(error)
+        }
     }
+}
+
+extension ViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        cell.imageView?.image = UIImage.init(systemName: "pencil.circle")
+        return cell
+    }
+}
+
+extension ViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         100
     }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .systemOrange
-//        cell.didAddSubview(UIView.init(frame: CGRect.init(x: 0, y: 0, width: 50, height: 100)))
-        return cell
-    }
-
-
 }
-
